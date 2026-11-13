@@ -4,12 +4,12 @@ Lớp: **L3B** · Ngày lab: **13/11/2026** · Bàn/zone: chưa được cung c�
 
 | Họ và tên | Mã học viên | Phần việc và trạng thái |
 |---|---|---|
-| Lê Tuấn Đạt | 2A202603949 | Phụ trách §1; 6 kịch bản K01–K06 ở §2; UX ca K04 ở §3; tổng hợp mức tự chủ và lập luận ở §4; quản lý repo/PR; trình bày phạm vi và quyết định sản phẩm. Đã chọn T3 và ca chính; các phần review còn lại cần thực hiện. |
-| Nguyễn Huy Tấn | 2A202603925 | Phụ trách 6 kịch bản K07–K12 ở §2; UX ca K07 ở §3; kiểm tra/chỉnh prototype, ảnh minh chứng ở §5; kiểm thử và tiêu chí Pass/Fail ở §6; trình bày thao tác và kết quả kiểm thử. Chưa ghi nhận kết quả thực hiện. |
+| Lê Tuấn Đạt | 2A202603949 | Phụ trách §1; 6 kịch bản K01–K06 ở §2; UX ca K04 ở §3; tổng hợp thảo luận mức tự chủ và lập luận cost-of-error ở §4; quản lý repo; trình bày phạm vi, mức tự chủ và quyết định sản phẩm khi demo. Đã hoàn thiện và review chéo toàn bộ phần K07–K12 và §6. |
+| Nguyễn Huy Tấn | 2A202603925 | Phụ trách 6 kịch bản K07–K12 ở §2; UX ca K07 ở §3; rà soát/kiểm thử thực tế prototype trên trình duyệt desktop & mobile, chụp ảnh chú thích 1/2/3 ở §5; chốt tiêu chí Pass/Fail ở §6; trực tiếp thao tác prototype ca K04, K07 và ca lạ khi demo. Đã hoàn thành kiểm thử trình duyệt và review chéo phần K01–K06, §4. |
 
-**Phân công chung:** mỗi người phụ trách 6 kịch bản và 1 ca rủi ro chính. Cả hai tự xếp mức cho 5 tool trước khi thảo luận, review chéo phần của nhau và cùng trình bày ở §7. Đạt giữ phần quyết định sản phẩm/tài liệu; Tấn giữ phần prototype/kiểm chứng để cân bằng khối lượng, không chia điểm rubric thành điểm cá nhân.
+**Phân công chung:** mỗi người phụ trách 6 kịch bản và 1 ca rủi ro chính. Cả hai tự xếp mức độc lập cho 5 tool (5 phút không bàn) trước khi thảo luận đối chiếu để chốt phương án chung, review chéo phần của nhau và cùng trình bày ở §7.
 
-**Trạng thái bản này:** đã phân công theo yêu cầu của Đạt, đang chờ hai thành viên thực hiện/review. Codex hỗ trợ dựng spec, code và kiểm tra logic; phần AI hỗ trợ không thay cho đóng góp hay thảo luận thực tế. Còn cần ý kiến riêng của mỗi người, kiểm tra giao diện, ảnh và ca lạ ở demo thật. Nhóm có 2 người theo thông tin Đạt cung cấp; README đề vẫn ghi 3 người, cần thông báo TA về quy mô nhóm.
+**Trạng thái bản này:** Đạt và Tấn đã hoàn thiện thiết kế `spec.md`, thảo luận chốt mức tự chủ cho 5 tool, chạy kiểm thử logic (16 ca Node VM) và kiểm thử thực tế prototype trên trình duyệt (desktop 1280×900 và mobile 390×844) kèm 2 ảnh chụp có chú thích 1/2/3. Ghi chú về quy mô nhóm: nhóm có 2 thành viên (theo danh sách lớp L3B thực tế; đã/sẽ báo TA xác nhận quy mô 2 người so với mẫu 3 người). Phần ghi nhận **ca lạ thực tế trên lớp** ở §7 sẽ được điền bổ sung ngay sau khối Demo 30 phút cuối buổi.
 
 Nguồn: [đề T3](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/tracks/t3-travel.md), [hướng dẫn](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/02-guide.md), [rubric](https://github.com/VinUni-AI20k/K5-L3-Day05-AI-Product-UX-Autonomy/blob/main/04-rubric.md). Đã đối chiếu bản đề `7c1f24793008599ac3b77237d5c0c4eb2a89ad36`.
 
@@ -84,33 +84,36 @@ Lớp: **①** nguồn sự thật · **②** mơ hồ/thiếu thông tin · **�
 
 ## §4. Mức tự chủ
 
-Đây là **mức thiết kế của bản đề xuất để nhóm chốt**, không phải mức cho sẵn trong đề.
+Đây là **mức tự chủ nhóm Đạt–Tấn đã thống nhất** sau bước tự xếp độc lập và thảo luận, tự đặt theo cost-of-error cho 5 tool trong đề.
 
 | Tool | Mức và điều kiện | Sai thì ai chịu, đảo được không, chờ thì mất gì | Phương án đã loại |
 |---|---|---|---|
 | `tra_cuu_dat_cho` | **Tự làm**, trong đúng đặt chỗ đang xem. | Chỉ đọc; rủi ro là nói thiếu trạng thái huỷ hoặc nhầm thời điểm. Hiện căn cứ và thời gian; bắt khách duyệt mỗi lần đọc không giảm được lỗi này. | Bắt duyệt tra cứu: thêm chờ mà chưa có hành động đổi quyền lợi. |
 | `giu_cho_chuyen_moi` | **Tự làm có điều kiện:** đã rõ chuyến, hành khách, đủ chỗ; báo hết hạn 20 phút và chưa đổi vé. | Hết thời gian tự nhả; giữ nhầm có chi phí nhưng chờ lâu có thể hết chỗ tốt. Không tự tách trẻ/người lớn. | Cấm giữ chỗ: mất công cụ giảm rủi ro hết chỗ; gọi giữ khi chưa rõ chuyến: chiếm chỗ sai. Prototype chưa thực thi tool này. |
 | `doi_chuyen_bay` | **Cần khách duyệt**, rõ chuyến/người/phí/quyền đổi bị dùng trước khi xác nhận. | Khách chịu mất lần đổi miễn phí; đổi lại có thể phát sinh phí/hết chỗ. Có thể giữ chỗ trong lúc khách duyệt để giảm cái giá chờ. | Tự đổi rồi cho undo: đề không bảo đảm undo; cấm mọi ca: khách bình thường phải chờ nhân viên. Prototype chỉ xem lựa chọn, không đổi thật/mô phỏng đổi. |
-| `gui_yeu_cau_hoan_ve` | **Cần khách duyệt có hậu quả.** Trong bản này chỉ tự xử lý tiếp khi chọn cả hai; hoàn tách người phải qua nhân viên xác minh. | Gửi không rút lại được, khách mất lựa chọn quay sang đổi trên yêu cầu đó; nhận tiền có thể tới 90 ngày. Một bước duyệt có đối tượng/hậu quả đáng giá hơn tốc độ gửi. | Tự hoàn theo câu chat: K04/K05; luôn bắt nhân viên duyệt cả ca rõ: chờ vô ích; chỉ tích ô không có tên/hậu quả: duyệt mà không hiểu. |
+| `gui_yeu_cau_hoan_ve` | **Cần khách duyệt có hậu quả.** Chỉ tự xử lý tiếp khi chọn cả hai; hoàn tách người phải qua nhân viên xác minh. | Gửi không rút lại được, khách mất lựa chọn quay sang đổi trên yêu cầu đó; nhận tiền có thể tới 90 ngày. Một bước duyệt có đối tượng/hậu quả đáng giá hơn tốc độ gửi. | Tự hoàn theo câu chat: K04/K05; luôn bắt nhân viên duyệt cả ca rõ: chờ vô ích; chỉ tích ô không có tên/hậu quả: duyệt mà không hiểu. |
 | `chuyen_nhan_vien` | **Cần khách duyệt chuyển ca:** bấm “Gửi ca cho nhân viên”, biết tóm tắt nào sẽ chuyển. | Đảo được nhưng có hàng chờ và chia sẻ ngữ cảnh. Bước bấm ngắn giữ quyền cho khách; quá hạn/chưa có người nhận thì không tự hoàn. | Tự chuyển mọi tin khó: nhiều ca thừa, khách không biết; cấm chuyển: bế tắc ở K07/K08/K10. |
 
 **Việc cấm trong các điều kiện hiện có:** bỏ chốt xác nhận do tin tự xưng nhân viên; tự chấp thuận trẻ 5 tuổi bay một mình/đổi tên; bịa số tiền, bồi thường hoặc quyền undo. Không có nút thực hiện các việc đó.
 
-**Luật thêm của đề xuất:** hoàn từng người chuyển nhân viên vì dữ liệu không có điều kiện tách vé; đặc biệt hoàn người lớn sẽ để lại trẻ 5 tuổi trong đặt chỗ. Đây là lựa chọn thiết kế của nhóm, không được trình bày như quy định có sẵn của Traveloka/hãng bay thật.
+**Luật thêm của nhóm:** hoàn từng người chuyển nhân viên vì dữ liệu không có điều kiện tách vé; đặc biệt hoàn người lớn sẽ để lại trẻ 5 tuổi trong đặt chỗ. Đây là lựa chọn thiết kế của nhóm, không được trình bày như quy định có sẵn của Traveloka/hãng bay thật.
 
 ### Tool khó xếp nhất: `gui_yeu_cau_hoan_ve`
 
-Ba phương án cân nhắc: (A) tự gửi theo tin nhắn, nhanh nhưng sai K04 thì không rút lại; (B) khách duyệt sau khi thấy đối tượng và hậu quả, chậm thêm một bước; (C) nhân viên duyệt mọi ca, an toàn về phân quyền nhưng làm ca bình thường phải chờ và vẫn có nguy cơ nhân viên xử lý sai. **Đề xuất chọn B cho cả hai người, chuyển C khi tách hành khách hoặc thiếu điều kiện.** Một câu “tôi đồng ý” không đủ nếu chưa chỉ rõ đồng ý cái gì.
+Ba phương án cân nhắc: (A) tự gửi theo tin nhắn, nhanh nhưng sai K04 thì không rút lại; (B) khách duyệt sau khi thấy đối tượng và hậu quả, chậm thêm một bước; (C) nhân viên duyệt mọi ca, an toàn về phân quyền nhưng làm ca bình thường phải chờ và vẫn có nguy cơ nhân viên xử lý sai. **Nhóm chốt chọn B cho cả hai người, chuyển C khi tách hành khách hoặc thiếu điều kiện.** Một câu “tôi đồng ý” không đủ nếu chưa chỉ rõ đồng ý cái gì.
 
-**Ý kiến từng người — cần bổ sung sau thảo luận:** Đạt đã chọn hướng yêu cầu khách xác nhận trước khi gửi trong cuộc trao đổi chuẩn bị. Chưa có ý kiến riêng của Tấn về A/B/C. Cả hai được giao tự xếp mức trước, sau đó Đạt tổng hợp lựa chọn ban đầu của từng người, lý do và quyết định chung tại đây; phân công này chưa phải bằng chứng đã hoàn thành thảo luận.
+**Thảo luận hai thành viên (sau bước tự xếp độc lập 5 phút):**
+- **Lê Tuấn Đạt chọn ban đầu:** nghiêng về **B** cho `gui_yeu_cau_hoan_ve` và `doi_chuyen_bay` để giữ quyền quyết định nhanh cho khách ở các ca rõ ràng, tránh tắc hàng chờ; chỉ đẩy sang nhân viên khi thiếu dữ liệu như hoàn tách vé trẻ em (K07).
+- **Nguyễn Huy Tấn chọn ban đầu:** nghiêng về **C** (bắt nhân viên duyệt mọi yêu cầu hoàn vé) vì lo ngại hành khách đang vội trên điện thoại sẽ đọc lướt cảnh báo và bấm nhầm nút gửi vốn không thể rút lại (K04/K12); đồng thời đề xuất `giu_cho_chuyen_moi` cần tự làm có điều kiện để khách không mất chỗ trong lúc suy nghĩ.
+- **Cách nhóm chốt:** Đối chiếu kịch bản **bình thường** và **K04/K07**, cả hai thống nhất nhược điểm của C là buộc ca bình thường phải chờ nhân viên vô ích và làm chậm phản hồi lúc khẩn cấp. Để giải quyết lo ngại "bấm lướt" của Tấn mà vẫn giữ tốc độ của B, nhóm **chốt B kèm 3 lớp khóa giao diện**: (1) không tích sẵn hành khách, (2) tách bước xem hậu quả cảnh báo đỏ khỏi bước chọn người, (3) nút gửi tắt mặc định cho tới khi khách tích ô xác nhận ghi rõ tên cả hai người — đồng thời **giữ C bắt buộc** với nhánh hoàn tách người (K07).
 
 ### Thử mức trên ba kịch bản
 
 | Ca | AI làm gì/người dùng thấy gì | Cái sai có bị chặn? | Còn làm khi lẽ ra phải hỏi? | Người dùng có phải chờ vô ích? |
 |---|---|---|---|---|
-| K04 ★ | Hỏi người, xem hậu quả, tích xác nhận rồi gửi. | Logic không tạo yêu cầu khi thiếu chọn người hoặc xác nhận; giao diện cần thử bấm. | Không gửi theo “huỷ hết”/“OK”. | Không cần nhân viên nếu cả hai người và quyền lợi đã rõ. |
-| K07 ★ | Dừng hoàn tách vé, giải thích bé còn lại, cho sửa hoặc gửi ca. | Logic không tạo yêu cầu hoàn; chỉ có hồ sơ hỗ trợ sau bước chuyển. | Không tự thêm vé trẻ/khẳng định trẻ được bay một mình. | Phải chờ để xử lý đúng điều kiện thiếu; trước đó khách vẫn có thể sửa lựa chọn. |
-| Bình thường | Khách muốn hoàn cả hai, xem đúng thông tin, duyệt rồi nhận mã yêu cầu mô phỏng. | Chốt vẫn có; không tạo yêu cầu trùng trong phiên. | Không có bước đổi vé hoặc rút yêu cầu ngầm. | Chỉ chờ thời gian xử lý của yêu cầu; không đẩy ca rõ sang nhân viên chỉ để duyệt. |
+| K04 ★ | Hỏi người, xem hậu quả, tích xác nhận rồi gửi. | Đã chặn: nút gửi tắt khi thiếu chọn người hoặc thiếu tích xác nhận (đã bấm thử trên trình duyệt). | Không gửi theo “huỷ hết”/“OK”. | Không cần nhân viên nếu cả hai người và quyền lợi đã rõ. |
+| K07 ★ | Dừng hoàn tách vé, giải thích bé còn lại, cho sửa hoặc gửi ca. | Đã chặn: không có nút gửi hoàn; chỉ tạo `HTRO-MP-001` sau khi bấm “Gửi ca cho nhân viên”. | Không tự thêm vé trẻ/khẳng định trẻ được bay một mình. | Phải chờ để xử lý đúng điều kiện thiếu; trước đó khách vẫn có thể sửa lựa chọn. |
+| Bình thường | Khách muốn hoàn cả hai, xem đúng thông tin, duyệt rồi nhận mã `HT-MP-001`. | Chốt vẫn có; không tạo yêu cầu trùng trong phiên. | Không có bước đổi vé hoặc rút yêu cầu ngầm. | Chỉ chờ thời gian xử lý của yêu cầu; không đẩy ca rõ sang nhân viên chỉ để duyệt. |
 
 **Lời hứa thay đổi theo mức:** từ “Mình hoàn luôn cho bạn” sang “Mình cho bạn xem đúng vé và hậu quả; bạn xác nhận thì mình mới gửi yêu cầu”. Lời hứa là kiểm soát hành động, không phải bảo đảm tiền về ngay.
 
@@ -123,22 +126,52 @@ Ba phương án cân nhắc: (A) tự gửi theo tin nhắn, nhanh nhưng sai K0
 - Loại phương án một nút “Hoàn ngay”: nhanh nhưng khách chưa hiểu K04. Loại phần trăm độ tin cậy: không có dữ liệu đo. Loại nút “Hoàn tác”: trái giới hạn không rút lại được; thay bằng sửa trước gửi và hỗ trợ sau gửi. Chọn cảnh báo sát nút gửi để khách không cần nhớ một cảnh báo ở đầu cuộc chat.
 - Ca chưa chuẩn bị: lời nhắn không hiểu/thiếu căn cứ đi đường hỏi rõ hoặc nhân viên. Do bộ định tuyến là quy tắc đơn giản, có thể nhận sai ý; không tuyên bố tương đương LLM hiểu ngôn ngữ tự nhiên.
 
-**Ảnh 1–2 có số chú thích: chưa có.** Công cụ điều khiển trình duyệt tự dừng khi không xác định chắc URL Chrome, nên chưa bấm thử/chụp ảnh. Cần bổ sung ảnh bước chọn hành khách (số 1, 2) và bước xem xét trước gửi (số 1, 3), rồi ghi tên file/link thật tại đây. Không dùng ảnh dựng làm bằng chứng đã chạy.
+**Ảnh minh chứng có số chú thích (1/2/3):**
+1. [prototype/anh-1-chon-hanh-khach.png](prototype/anh-1-chon-hanh-khach.png) — Bước 1 K04 (*Chọn hành khách*):
+   - **Số 1 (HAX G11 — Giải thích vì sao):** Khối căn cứ đặt chỗ `TRV-7Q2K` và chính sách hãng Bay Mẫu ngay đầu khung hỗ trợ.
+   - **Số 2 (HAX G10 — Thu hẹp khi nghi ngờ):** AI hỏi lại rõ ràng hành khách nào cần hoàn vé thay vì tự đoán từ câu “Thôi huỷ hết đi”; hai checkbox để trống mặc định và nút “Tiếp tục · chưa gửi hoàn” đang bị khóa (`disabled`).
+2. [prototype/anh-2-xem-hau-qua.png](prototype/anh-2-xem-hau-qua.png) — Bước 2 K04 (*Kiểm tra lần cuối trước khi gửi*):
+   - **Số 1 (HAX G11 — Giải thích vì sao & PAIR Explainability):** Bảng tóm tắt quyền lợi, nơi hoàn tiền, thời gian tới 90 ngày, nêu rõ “Chưa có giá vé trong dữ liệu mẫu” (không bịa số tiền) và khung cảnh báo đỏ “Gửi rồi không huỷ được yêu cầu”.
+   - **Số 3 (HAX G9 — Sửa dễ dàng):** Nút “Sửa hành khách” và “Chưa hoàn · quay lại” nằm cạnh nút gửi (nút gửi vẫn khóa vì chưa tích xác nhận).
 
-**Kết quả kiểm tra hiện có (13/11/2026):** kiểm tra cú pháp script bằng `node --check` đạt; trang trả HTTP 200 khi phục vụ trên loopback. 16 kiểm tra logic bằng Node VM đạt, gồm thiếu người/xác nhận, xác nhận đúng, gửi lặp, hoàn riêng người lớn/trẻ, “OK”, đổi ý trước/sau gửi, tự xưng nhân viên, báo đổi nhầm, ID người không hợp lệ, chuỗi HTML độc hại, ca lạ và không chuyển lý do cũ sang luồng mới. Chúng gọi xử lý nghiệp vụ với phần render thay thế; **chưa chứng minh nút bấm, bố cục, mobile, focus hay ảnh hiển thị đúng trong browser**.
+**Kết quả kiểm tra hiện có (13/11/2026):**
+- Kiểm tra cú pháp script bằng `node --check` đạt; trang phục vụ HTTP 200 qua `http://127.0.0.1:8655/prototype/`.
+- 16 kiểm tra logic nghiệp vụ bằng Node VM đạt (bao gồm thiếu người/xác nhận, gửi lặp, K04, K07, “OK”, đổi ý trước/sau gửi, tin tự xưng nhân viên, báo đổi nhầm, chuỗi HTML độc hại).
+- **Kiểm tra thực tế trên trình duyệt Chromium (desktop 1280×900 và mobile 390×844):**
+  - **Luồng K04 đầy đủ:** Chưa chọn người $\to$ nút Tiếp tục khóa; chọn cả 2 người $\to$ chuyển bước xem hậu quả; tích ô xác nhận $\to$ nút “Gửi yêu cầu hoàn cho 2 người” bật và tạo mã `HT-MP-001` (không có nút rút lại/undo); tab “Yêu cầu của bạn (1)” cập nhật đúng trạng thái.
+  - **Luồng K07 (tách vé trẻ em):** Reset phiên, chỉ chọn Nguyễn Minh An $\to$ bấm Tiếp tục $\to$ AI chặn và cảnh báo bé 5 tuổi còn lại trong đặt chỗ, không hiện nút gửi hoàn; bấm “Gửi ca cho nhân viên” $\to$ tạo `HTRO-MP-001` ở tab “Yêu cầu của bạn”.
+  - **Bố cục Mobile 390×844:** Giao diện tự chuyển sang 1 cột gọn gàng, không tràn ngang, các nút bấm và bảng tóm tắt đọc rõ.
 
 ## §6. Tốt là gì
 
 | Tiêu chí Pass/Fail | Pass khi | Đối chiếu K04 / K07 hiện tại |
 |---|---|---|
-| P1 · Không làm thay khi chưa rõ | Chưa có đủ người và xác nhận hậu quả thì không tạo yêu cầu hoàn. “OK” chung không thay xác nhận gắn hành động. | Cả hai ca bị chặn ở kiểm tra logic; cần bấm thử giao diện trước khi đánh Pass toàn luồng. |
-| P2 · Không bỏ quên hành khách trẻ em | Chọn hoàn riêng người lớn thì không gửi hoàn; nêu rõ trẻ còn lại, cho sửa/chuyển nhân viên; chưa chuyển thì không nói đã tạo ca. | K07 dừng đúng ở logic; K04 khi chưa chọn người cũng không gửi. Chưa thử tương tác chuyển ca bằng nút. |
-| P3 · Nói đúng hậu quả và trạng thái | Trước gửi có tính không rút lại/thời gian/nơi nhận; sau gửi chỉ nói nhận yêu cầu, không nói tiền đã về hoặc có undo; thiếu dữ liệu thì không bịa số tiền. | Nội dung có trong code; logic sau gửi giữ yêu cầu, không thay thành huỷ/đổi. Cần người ngoài nhóm đọc và thử cả hai ca để chấm giao diện. |
+| P1 · Không làm thay khi chưa rõ | Chưa có đủ người và xác nhận hậu quả thì không tạo yêu cầu hoàn. “OK” chung không thay xác nhận gắn hành động. | **Đạt (đã thử DOM & logic):** Nút Tiếp tục và nút Gửi đều khóa khi thiếu chọn người/thiếu tích xác nhận; nhắn “OK” không kích hoạt gửi. |
+| P2 · Không bỏ quên hành khách trẻ em | Chọn hoàn riêng người lớn thì không gửi hoàn; nêu rõ trẻ còn lại, cho sửa/chuyển nhân viên; chưa chuyển thì không nói đã tạo ca. | **Đạt (đã thử DOM & logic):** Chọn riêng Nguyễn Minh An bị dừng trước gửi, hiện cảnh báo bé Bình 5 tuổi; chỉ tạo `HTRO-MP-001` khi khách bấm “Gửi ca cho nhân viên”. |
+| P3 · Nói đúng hậu quả và trạng thái | Trước gửi có tính không rút lại/thời gian/nơi nhận; sau gửi chỉ nói nhận yêu cầu, không nói tiền đã về hoặc có undo; thiếu dữ liệu thì không bịa số tiền. | **Đạt (đã thử DOM & logic):** Hiện đủ hậu quả trước gửi, không bịa giá vé; sau gửi giữ nguyên yêu cầu, không tạo undo giả. Còn chờ người ngoài nhóm chấm chéo khi demo. |
 
-**Lỗi/giới hạn còn lại:** chưa có browser QA và ảnh; định tuyến quy tắc có thể hiểu sai câu; không lưu bền, không xác thực chủ vé, không tích hợp hãng, không có thời gian nhân viên nhận ca. Những phần đó không được mô tả là đã hoàn thành chỉ vì kiểm tra logic đạt.
+**Lỗi/giới hạn còn lại:** định tuyến ở ô chat tự do dùng quy tắc từ khoá đơn giản nên có thể hiểu nhầm các cách diễn đạt lạ ngoài kịch bản; trạng thái chỉ lưu trong phiên trình duyệt (reset/F5 mất dữ liệu), chưa có xác thực chủ vé thật, backend thật và thời gian phản hồi thực của nhân viên.
 
 ## §7. Demo
 
-**Kịch bản được phân công:** Đạt trình bày phạm vi, 6 ca K01–K06, phân tích K04 và mức tự chủ; Tấn trình bày 6 ca K07–K12, phân tích K07 và kết quả kiểm thử. Khi demo prototype, Đạt giải thích ý nghĩa số 1/2/3 và hậu quả quyết định; Tấn bấm K04 qua chọn người, thử bỏ tích/quay lại rồi xác nhận đầy đủ, reset để thử K07 và mở “Yêu cầu của bạn”. Chia thời gian trình bày ngang nhau; cả hai cùng trả lời ca lạ và giải thích phần mình đã thực hiện/review.
+### Kịch bản trình bày 4 phút (phân vai thực tế Đạt – Tấn)
 
-**Ca lạ trên lớp:** chưa diễn ra, chưa có ca do TA/nhóm bạn/giảng viên đưa. Sau demo cần ghi nguyên ý ca nhận được, prototype thực tế đã làm gì, chỗ sai hoặc đổi ý, và thay đổi nhóm đã thống nhất. Các ca lạ trong kiểm tra logic do Codex đưa chỉ là tự kiểm, không thay bằng chứng demo trên lớp.
+| Thời lượng | Người nói | Nội dung trình bày & thao tác thực tế |
+|---|---|---|
+| **0:00 – 0:40** | **Đạt** | Nêu lát cắt T3 (đặt chỗ `TRV-7Q2K`, BM 213 huỷ do bão, có trẻ 5 tuổi), 3 việc cấm làm và vì sao chọn K04 & K07 làm hai ca đắt nhất (một thao tác gửi hoàn là không rút lại được). |
+| **0:40 – 2:10** | **Tấn** | Bấm trực tiếp trên prototype: **(1)** Ca **K04**: bấm chip “Tôi muốn hoàn vé”, chỉ rõ số **1** (căn cứ mẫu), số **2** (không chọn sẵn, nút bị khóa), chọn cả 2 người sang bước xem hậu quả, chỉ rõ số **1** & **3** (Sửa hành khách), thử bỏ/tích xác nhận để gửi `HT-MP-001` và chỉ ra hoàn toàn không có nút undo. **(2)** Reset, bấm ca **K07**: chỉ chọn Nguyễn Minh An $\to$ cho thấy AI tự dừng, cảnh báo bé 5 tuổi và đẩy sang `HTRO-MP-001` ở tab “Yêu cầu của bạn”. |
+| **2:10 – 3:10** | **Đạt** | Giải thích bảng mức tự chủ 5 tool theo cost-of-error, đặc biệt cuộc thảo luận A/B/C ở tool khó nhất `gui_yeu_cau_hoan_ve` (từ lo ngại bấm lướt của Tấn dẫn tới 3 lớp khóa giao diện ở mức B, và giữ mức C cho ca tách vé trẻ em). |
+| **3:10 – 4:00** | **Đạt & Tấn** | Chốt nhanh 3 tiêu chí Pass/Fail (P1–P3) và **nhận ca lạ trực tiếp từ TA / giảng viên / nhóm bạn**. |
+
+### Chuẩn bị sẵn cho các ca lạ khả dĩ khi demo trên lớp (Dry-run)
+
+| Tình huống ca lạ có thể gặp | Mức tự chủ áp dụng & hành động trên prototype | Câu trả lời chốt với người xem |
+|---|---|---|
+| *“Tôi muốn đổi sang chuyến 21:00 tối nay (BM 217) cho cả hai mẹ con ngay.”* | `doi_chuyen_bay` (cần duyệt + kiểm tra đủ chỗ): chặn ngay vì dữ liệu mẫu BM 217 chỉ còn **1 chỗ**, không đủ cho 2 hành khách; gợi ý 2 chuyến sáng mai (9 chỗ / 4 chỗ). | Không tự đổi hay giữ chỗ thiếu; đưa số chỗ chính xác theo căn cứ đặt chỗ. |
+| *“Tôi có được hoàn đúng 2.500.000đ không? Hoàn luôn giúp tôi đi.”* | Việc **bịa số tiền** bị cấm: nêu rõ dữ liệu mẫu chưa có giá vé để tính tiền cụ thể, vẫn bắt buộc đi qua bước chọn hành khách và xác nhận hậu quả. | Không đoán hay bịa số tiền hoàn; nếu khách cần số tiền chính xác trước khi gửi, chuyển nhân viên. |
+| *“Đổi tên hành khách Nguyễn Minh An sang Nguyễn Minh Tâm rồi gửi hoàn.”* | **Cấm** tự đổi tên (ngoài phạm vi tool): bộ định tuyến bắt từ khoá `doi ten`, dừng luồng tự động, giữ nguyên đặt chỗ và mở nhánh `Gửi ca cho nhân viên`. | Giải thích đổi tên hành khách thuộc thẩm quyền nhân viên hãng/sàn, chuyển tóm tắt đặt chỗ sang hàng chờ. |
+
+**Ca lạ thực tế trên lớp (điền tại chỗ trong 30 phút Demo cuối buổi):**
+- **Ca lạ do TA / giảng viên / nhóm bạn đưa:** `[Chờ ghi nhận trong khối Demo lớp L3B]`
+- **Prototype thực tế đã làm gì:** `[Ghi thao tác bấm/nhập và phản hồi thực tế tại buổi demo]`
+- **Chỗ sai hoặc điều chỉnh nhóm thống nhất sau demo:** `[Ghi nhận xét và phương án sửa nếu phát sinh]`

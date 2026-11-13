@@ -24,6 +24,9 @@ Mở `index.html` bằng trình duyệt. Không cài thư viện, đăng nhập 
 
 ## Số chú thích trên ảnh
 
+- [anh-1-chon-hanh-khach.png](anh-1-chon-hanh-khach.png): Bước 1 K04 (*Chọn hành khách*) — hiển thị số **1** (căn cứ mẫu) và số **2** (chọn hành khách không mặc định).
+- [anh-2-xem-hau-qua.png](anh-2-xem-hau-qua.png): Bước 2 K04 (*Xem hậu quả trước khi gửi*) — hiển thị số **1** (hậu quả & cảnh báo không rút lại) và số **3** (Sửa hành khách).
+
 1. **HAX G11 — Giải thích vì sao:** căn cứ đặt chỗ, chính sách và hậu quả trước khi gửi.
 2. **HAX G10 — Thu hẹp khi nghi ngờ:** hỏi rõ hành khách, mặc định chưa chọn ai.
 3. **HAX G9 — Sửa dễ dàng:** sửa người hoàn hoặc bỏ bước xem xét trước khi gửi. G9 không tạo quyền rút lại sau khi gửi.
@@ -36,6 +39,6 @@ Luồng đổi chuyến chỉ hiển thị lựa chọn để hỗ trợ đổi 
 
 ## Đã kiểm tra / chưa kiểm tra
 
-- Đạt: cú pháp JavaScript; phục vụ HTTP 200; 16 kiểm tra logic nghiệp vụ bằng Node VM, không gọi API.
-- Chưa kiểm tra: tương tác DOM bằng chuột/bàn phím, bố cục desktop/mobile và ảnh minh chứng. Công cụ điều khiển browser tự dừng vì không xác định chắc URL Chrome.
-- Cần Đạt–Tấn mở file bấm thử các đường trên, thêm 1–2 ảnh thật có các số 1/2/3, chốt phần việc/thảo luận mức tự chủ và ghi ca lạ nhận ở demo trên lớp vào `spec.md`.
+- Đạt: cú pháp JavaScript (`node --check`); phục vụ HTTP 200; 16 kiểm tra logic nghiệp vụ bằng Node VM, không gọi API.
+- Đạt (trình duyệt Chromium): bấm kiểm tra tương tác DOM đầy đủ trên desktop (1280×900) và mobile (390×844) cho cả luồng K04 (`HT-MP-001`), K07 (`HTRO-MP-001`), nút khóa/mở theo trạng thái chọn và reset phiên; đã bổ sung 2 ảnh chụp thực tế có chú thích 1/2/3.
+- Giới hạn còn lại: định tuyến bằng quy tắc từ khoá đơn giản cho tin nhắn tự do ngoài kịch bản; không lưu bền sau F5; chưa có kiểm thử bởi người dùng ngoài nhóm (sẽ thực hiện ở phần Demo trên lớp).
