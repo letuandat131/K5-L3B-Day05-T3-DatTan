@@ -1,6 +1,6 @@
 # LAB5 — T3 Du lịch · Nhóm DatTan
 
-Lớp: **L3B** · Ngày lab: **13/11/2026** · Bàn/zone: chưa được cung cấp · Track: **T3**
+Lớp: **L3B** · Ngày lab: **13/11/2026** · Track: **T3**
 
 | Họ và tên | Mã học viên | Phần việc và trạng thái |
 |---|---|---|
@@ -23,7 +23,7 @@ Ba việc không làm:
 
 1. **Không quyết thay khách khi chưa rõ hành khách/hành động.** “Huỷ hết” không tự trở thành lệnh gửi hoàn, vì chuyến đã bị hãng huỷ còn yêu cầu hoàn là quyết định khác.
 2. **Không xử lý đổi tên, trẻ nhỏ bay một mình hoặc hứa bồi thường ngoài chính sách.** Đây là các ranh giới T3 đã nêu; chuyển nhân viên khi cần xác minh.
-3. **Không giả làm hệ thống giao dịch thật.** Prototype dùng dữ liệu dựng, không đổi/hoàn vé thật, không có backend hoặc model thật. Luồng đổi chuyến mới dừng ở xem lựa chọn; không nói đã giữ chỗ hoặc đổi vé.
+3. **Không rút lại yêu cầu hoàn đã gửi.** `gui_yeu_cau_hoan_ve` gửi rồi không huỷ được và không tool nào rút được, nên trợ lý không có nút "huỷ yêu cầu hoàn" và không hứa "mình huỷ giúp bạn". Khách đổi ý sau khi gửi (K12) thì trợ lý nói thật giới hạn và chuyển nhân viên kèm tóm tắt, không hứa kết quả.
 
 Giả định thiết kế: người dùng đã vào đúng đặt chỗ của mình; lab không thiết kế đăng nhập/xác thực chủ vé. Nếu làm sản phẩm thật, xác thực là điều kiện trước khi cấp quyền thao tác.
 
